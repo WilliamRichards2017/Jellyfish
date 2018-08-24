@@ -22,22 +22,24 @@
 #include <assert.h>
 #include <jellyfish/rectangular_binary_matrix.hpp>
 
-#ifdef HAVE_CONFIG_H
 #include <config.h>
-#endif
 
+/* DHLE
 #ifdef HAVE_POSIX_MEMALIGN
 inline int __mem_align(void** memptr, size_t alignement, size_t size) {
   return posix_memalign(memptr, alignement, size);
 }
 #elif HAVE_ALIGNED_ALLOC
+*/
 inline int __mem_align(void** memptr, size_t alignment, size_t size) {
   *memptr = aligned_alloc(alignment, size);
   return memptr == NULL;
 }
+/* DHL
 #else
 #error No function to allocate aligned memory
 #endif
+*/
 
 uint64_t *jellyfish::RectangularBinaryMatrix::alloc(unsigned int r, unsigned int c) {
   if(r > (sizeof(uint64_t) * 8) || r == 0 || c == 0) {

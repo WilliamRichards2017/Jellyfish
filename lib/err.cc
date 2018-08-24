@@ -18,6 +18,8 @@
 
 namespace jellyfish {
 namespace err {
+  /*
+    DHL
   std::ostream &operator<<(std::ostream &os, const substr &ss) {
     os.write(ss._s, ss._l);
     return os;
@@ -27,5 +29,6 @@ namespace err {
     x.write(os, errno);
     return os;
   }
+  */
 }
 }
