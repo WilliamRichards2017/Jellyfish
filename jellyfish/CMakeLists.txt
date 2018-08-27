@@ -28,13 +28,13 @@ set(JELLYFISH_MODIFIED_SOURCES
   modified_merge_files.cc
 )
 
-add_executable(jellyfish
-	${JELLYFISH_SOURCES}
-)
+##add_executable(jellyfish
+##	${JELLYFISH_SOURCES}
+##)
 
-target_link_libraries(jellyfish
-	${JELLYFISH_LIB_LIB}
-)
+##target_link_libraries(jellyfish
+##	${JELLYFISH_LIB_LIB}
+##)
 
 
 add_executable(jellyfishModified
