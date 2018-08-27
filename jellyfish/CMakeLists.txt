@@ -19,6 +19,33 @@ set(JELLYFISH_SOURCES
   merge_files.cc
   )
 
+set(JELLYFISH_MODIFIED_SOURCES
+  mersenne.cpp
+  backtrace.cc
+  dbg.cc
+  fastq2sam.cc
+  generate_sequence.cc
+  modified_merge_files.cc
+)
+
+add_executable(jellyfish
+	${JELLYFISH_SOURCES}
+)
+
+target_link_libraries(jellyfish
+	${JELLYFISH_LIB_LIB}
+)
+
+
+add_executable(jellyfishModified
+	${JELLYFISH_MODIFIED_SOURCES}
+)
+
+target_link_libraries(jellyfishModified
+	${JELLYFISH_LIB_LIB}
+)
+
+
 SET(JELLYFISH_CORE_LIB jellyfish_core CACHE STRING "THE CORE LIBRARY") #cache jellyfish_core so you can use it to link later
 
 add_library(${JELLYFISH_CORE_LIB} STATIC ${JELLYFISH_SOURCES})
