@@ -47,7 +47,7 @@ endforeach()
 
 if (NOT EXISTS ${PROJECT_SOURCE_DIR}/config.h)
   add_custom_command(TARGET ${JELLYFISH_EXTERNAL_PROJECT} POST_BUILD
-        COMMAND configure --enable-python-binding
+        COMMAND ./configure --enable-python-binding
 		WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
         COMMENT "executing config script"
     )
